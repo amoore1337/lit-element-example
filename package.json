@@ -1,0 +1,44 @@
+{
+  "name": "lit-element-example",
+  "version": "1.0.0",
+  "description": "Example project for building lit-element for dev and production.",
+  "main": "my-element.js",
+  "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "serve": "cd ./build && serve -l 8080",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "web-components",
+    "lit-element",
+    "typescript"
+  ],
+  "author": "Austin Moore",
+  "license": "ISC",
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.5.0",
+    "core-js": "^3.7.0",
+    "lit-element": "^2.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-decorators": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-typescript": "^7.12.1",
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "@rollup/plugin-typescript": "^6.1.0",
+    "commonjs": "0.0.1",
+    "corejs": "^1.0.0",
+    "regenerator-runtime": "^0.13.7",
+    "rollup": "^2.33.1",
+    "rollup-plugin-copy": "^3.3.0",
+    "serve": "^11.3.2",
+    "systemjs": "^6.7.1",
+    "tslib": "^2.0.3",
+    "typescript": "^4.0.5"
+  }
+}

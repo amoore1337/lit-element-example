@@ -1,15 +1,15 @@
 import typescript from '@rollup/plugin-typescript';
 import resolve from '@rollup/plugin-node-resolve';
 import copy from 'rollup-plugin-copy';
+import del from 'rollup-plugin-delete';
 
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 
 const copyConfig = {
   targets: [
-    { src: 'node_modules/@webcomponents', dest: 'build/node_modules' },
-    { src: 'node_modules/systemjs/dist/s.js', dest: 'build/node_modules/systemjs/dist' },
-    { src: 'index.html', dest: 'build' },
+    { src: 'node_modules/@webcomponents', dest: 'dist/node_modules' },
+    { src: 'index.html', dest: 'dist' },
   ],
 };
 
@@ -34,10 +34,11 @@ const config = [
   {
     input: 'src/my-element.ts',
     output: {
-      dir: 'build',
-      format: 'systemjs',
+      dir: 'dist',
+      format: 'iife',
     },
     plugins: [
+      del({ targets: 'dist/*' }),
       typescript(),
       babel(babelConfig),
       resolve(),
@@ -49,7 +50,7 @@ const config = [
   {
     input: 'src/babel-polyfills-nomodule.js',
     output: {
-      file: 'build/babel-polyfills-nomodule.js',
+      file: 'dist/babel-polyfills-nomodule.js',
       format: 'iife',
     },
     plugins: [commonjs({ include: ['node_modules/**'] }), resolve()],

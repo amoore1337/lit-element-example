@@ -12,13 +12,15 @@
 
 <body>
 
-  <my-element>Hi from Lit-Element</my-element>
+  <my-element id="el">Hi from Lit-Element</my-element>
 
   <script src="babel-polyfills-nomodule.js"></script>
   <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-  <script src="node_modules/systemjs/dist/s.js"></script>
+  <script src="my-element.js"></script>
+
   <script>
-    System.import('./my-element.js');
+    var el = document.getElementById('el');
+    el.addEventListener('my-element-submit', function (e) { console.log(e) });
   </script>
 
 </body>

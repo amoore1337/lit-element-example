@@ -26,7 +26,7 @@ export class MyElement extends LitElement {
   /**
    * The number of times the button has been clicked.
    */
-  @property({ type: Number })
+  @property({ type: Number, reflect: true })
   count = 0;
 
   render() {
@@ -41,6 +41,8 @@ export class MyElement extends LitElement {
 
   private _onClick() {
     this.count++;
+    let subEvent = new CustomEvent('my-element-submit', { detail: { message: 'event happened' } });
+    this.dispatchEvent(subEvent);
   }
 
   foo(): string {

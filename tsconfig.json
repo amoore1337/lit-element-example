@@ -3,7 +3,8 @@
     "target": "es2017",
     "module": "es2015",
     "lib": [
-      "es2017"
+      "es2017",
+      "DOM",
     ],
     "rootDir": "./src",
     "strict": true,

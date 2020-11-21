@@ -4,8 +4,9 @@
   "description": "Example project for building lit-element for dev and production.",
   "main": "my-element.js",
   "scripts": {
+    "start": "npm run build && npm run serve",
     "build": "rollup -c rollup.config.js",
-    "serve": "cd ./build && serve -l 8080",
+    "serve": "cd ./dist && serve -l 8080",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -31,11 +32,10 @@
     "@rollup/plugin-commonjs": "^16.0.0",
     "@rollup/plugin-node-resolve": "^10.0.0",
     "@rollup/plugin-typescript": "^6.1.0",
-    "commonjs": "0.0.1",
-    "corejs": "^1.0.0",
     "regenerator-runtime": "^0.13.7",
     "rollup": "^2.33.1",
     "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-delete": "^2.0.0",
     "serve": "^11.3.2",
     "systemjs": "^6.7.1",
     "tslib": "^2.0.3",
